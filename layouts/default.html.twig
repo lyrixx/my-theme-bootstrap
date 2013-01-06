@@ -14,38 +14,25 @@
         <b class="caret"></b>
       </a>
       <ul class="dropdown-menu">
-        <li>
-          <a href="http://github.com/lyrixx/Silex-Kitchen-Edition" target="_blank">
-            Silex Kitchen Edition
-          </a>
-        </li>
-        <li>
-          <a href="http://github.com/lyrixx/lifestream" target="_blank">
-            Lifestream
-          </a>
-        </li>
+        {% set sites = {
+          'Carew': 'http://carew.github.com',
+          'Silex Kitchen Edition': 'http://lyrixx.github.com/Silex-Kitchen-Edition/',
+          'Lifestream': 'http://lyrixx.github.com/lifestream',
+          'Series': 'http://lyrixx.github.com/Series',
+        } %}
+        {% for name, url in sites %}
+          <li><a href="{{ url }}" target="_blank">{{ name }}</a></li>
+        {% endfor %}
         <li class="divider"></li>
         <li class="nav-header">Follow me on</li>
-        <li>
-          <a href="http://github.com/lyrixx" target="_blank">
-            Github
-          </a>
-        </li>
-        <li>
-          <a href="http://twitter.com/lyrixx" target="_blank">
-            Twitter
-          </a>
-        </li>
-        <li>
-          <a href="http://gregoirepineau.fr" target="_blank">
-            My Personal Homepage
-          </a>
-        </li>
-        <li>
-          <a href="http://gregoirepineau.fr" target="_blank">
-            My Blog
-          </a>
-        </li>
+        {% set sites = {
+          'Github': 'http://github.com/lyrixx',
+          'Twitter': 'http://twitter.com/lyrixx',
+          'Blog': 'http://blog.lyrixx.info',
+        } %}
+        {% for name, url in sites %}
+          <li><a href="{{ url }}" target="_blank">{{ name }}</a></li>
+        {% endfor %}
       </ul>
     </li>
   </ul>

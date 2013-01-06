@@ -2,13 +2,13 @@
 
 {% block nav_left %}
     <ul class="nav">
+        {{ parent() }}
+         <li class="divider-vertical"></li>
         {% if document.toc is defined and document.toc.0 is defined%}
             {% for item in document.toc.0 %}
                 <li><a href="#{{ item.id}}">{{ item.title }}</a></li>
             {% endfor %}
         {% endif %}
-         <li class="divider-vertical"></li>
-        {{ parent() }}
     </ul>
 {% endblock %}
 

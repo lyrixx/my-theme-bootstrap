@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "carew/carew": "*",
-        "carew/theme-bootstrap": "*"
+        "carew/carew": "dev-master",
+        "carew/theme-bootstrap": "dev-master"
     }
 }

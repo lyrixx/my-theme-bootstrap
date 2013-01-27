@@ -1,15 +1,20 @@
 {
-    "name": "lyrixx/my-theme-bootstrap",
-    "description": "My Twitter bootstrap theme for Carew",
-    "license": "MIT",
-    "authors": [
+    "name"        : "lyrixx/my-theme-bootstrap",
+    "description" : "My Twitter bootstrap theme for Carew",
+    "license"     : "MIT",
+    "authors"     : [
         {
-            "name": "Grégoire Pineau",
-            "email": "lyrixx@lyrixx.info"
+            "name"  : "Grégoire Pineau",
+            "email" : "lyrixx@lyrixx.info"
         }
     ],
     "require": {
-        "carew/carew": "dev-master",
-        "carew/theme-bootstrap": "dev-master"
+        "carew/carew"           : "dev-master",
+        "carew/theme-bootstrap" : "dev-master"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
     }
 }

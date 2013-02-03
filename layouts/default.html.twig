@@ -40,6 +40,7 @@
 
 {% block stylesheets %}
 {% spaceless %}
+    {{ parent() }}
     <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/pojoaque.min.css">
     {#
     <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/solarized_dark.min.css">
@@ -52,8 +53,23 @@
 
 {% block javascripts %}
 {% spaceless %}
+    {{ parent() }}
     <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        {% if site.google_analytics %}
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', '{{ site.google_analytics }}']);
+            {% block google_analytics %}
+            _gaq.push(['_trackPageview']);
+            {% endblock %}
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        {% endif %}
+    </script>
 {% endspaceless %}
 {% endblock %}
 
